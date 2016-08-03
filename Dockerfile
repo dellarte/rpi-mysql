@@ -29,6 +29,7 @@ RUN sed -Ei 's/^(bind-address|log)/#&/' /etc/mysql/my.cnf
 VOLUME /var/lib/mysql
 
 COPY entrypoint.sh /
+RUN chmod +x entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 3306
